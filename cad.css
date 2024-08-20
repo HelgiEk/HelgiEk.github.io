@@ -1,4 +1,6 @@
 .cont {
+    display: flex;
+    justify-content: center;
     max-width: 900px;
     max-height: 900px;
     width: 900px;
