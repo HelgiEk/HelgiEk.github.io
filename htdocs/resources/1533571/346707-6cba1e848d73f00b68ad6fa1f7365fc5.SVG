@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="svgrootid" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 80 30" style="enable-background:new 0 0 80 30;" xml:space="preserve" width="80" height="30" preserveAspectRatio="none">
+<style type="text/css">
+	.st0{fill:#D7D7D7;stroke:#000000;stroke-miterlimit:10;}
+	.st1{fill:#D7D7D7;stroke:#424242;stroke-miterlimit:10;}
+	.st2{display:none;}
+	.st3{display:inline;fill:#2E7D32;stroke:#000000;stroke-miterlimit:10;}
+	.st4{display:inline;}
+	.st5{fill:none;stroke:#000000;stroke-miterlimit:10;}
+		.st6{fill:#d32f2f;stroke:#000000;stroke-miterlimit:10;}
+	.st7{fill:#0001d0;stroke:#000000;stroke-miterlimit:10;}
+	.st8{fill:#ffa500;stroke:#000000;stroke-miterlimit:10;}
+	.st9{fill:#ffff00;stroke:#000000;stroke-miterlimit:10;}
+</style>
+ 	<style type="text/css">
+    <![CDATA[    
+   		
+  	#Conv_Right_Part.Start #Conv_Stopped{display:none;}	
+	#Conv_Right_Part.Start #Conv_Started{display:inline;}	
+	#Conv_Right_Part.Fault #Conv_stopped{display:none;}	
+	#Conv_Right_Part.Fault #Conv_Fault{display:inline;}	
+  	#Conv_Right_Part.Manual #Conv_stopped{display:none;}	
+	#Conv_Right_Part.Manual #Conv_Manual{display:inline;}	
+  	#Conv_Right_Part.Local #Conv_stopped{display:none;}	
+	#Conv_Right_Part.Local #Conv_Local{display:inline;}	
+  	#Conv_Right_Part.Auto #Conv_stopped{display:none;}	
+	#Conv_Right_Part.Auto #Conv_Auto{display:inline;}			
+
+     ]]>
+  	</style>
+<g id="Conv_Right_Part">
+	<g id="Conv_Stopped" display="inline">
+		<polyline class="st0" points="0,0.5 79.5,0.5 79.5,17.5 0,17.5 		" />
+		<ellipse class="st1" cx="71.1" cy="8.8" rx="8.4" ry="8.3" />
+	</g>
+	<g id="Conv_Started" display="none">
+		<polyline class="st3" points="0,0.5 79.5,0.5 79.5,17.5 0,17.5 		" />
+		<ellipse class="st3" cx="71.1" cy="8.8" rx="8.4" ry="8.3" />
+		<g class="st4">
+			<line class="st5" x1="71.1" y1="0.6" x2="71.1" y2="8.8" />
+			
+				<animateTransform accumulate="none" additive="replace" attributeName="transform" calcMode="linear" dur="2s" fill="remove" from="360, 71.2, 8.8" repeatDur="indefinite" restart="always" to="0, 71.2, 8.8" type="rotate">
+				</animateTransform>
+		</g>
+	</g>
+		<g id="Conv_Fault" display="none">
+		<polyline class="st6" points="0,0.5 79.5,0.5 79.5,17.5 0,17.5 		" />
+		<ellipse class="st6" cx="71.1" cy="8.8" rx="8.4" ry="8.3" />
+		<g class="st4">
+			<line class="st5" x1="71.1" y1="0.6" x2="71.1" y2="8.8" />
+			
+
+		</g>
+	</g>
+		<g id="Conv_Manual" display="none">
+		<polyline class="st7" points="0,0.5 79.5,0.5 79.5,17.5 0,17.5 		" />
+		<ellipse class="st7" cx="71.1" cy="8.8" rx="8.4" ry="8.3" />
+		<g class="st4">
+			<line class="st5" x1="71.1" y1="0.6" x2="71.1" y2="8.8" />
+			
+				<animateTransform accumulate="none" additive="replace" attributeName="transform" calcMode="linear" dur="2s" fill="remove" from="360, 71.2, 8.8" repeatDur="indefinite" restart="always" to="0, 71.2, 8.8" type="rotate">
+				</animateTransform>
+		</g>
+	</g>
+		<g id="Conv_Local" display="none">
+		<polyline class="st8" points="0,0.5 79.5,0.5 79.5,17.5 0,17.5 		" />
+		<ellipse class="st8" cx="71.1" cy="8.8" rx="8.4" ry="8.3" />
+		<g class="st4">
+			<line class="st5" x1="71.1" y1="0.6" x2="71.1" y2="8.8" />
+			
+				<animateTransform accumulate="none" additive="replace" attributeName="transform" calcMode="linear" dur="2s" fill="remove" from="360, 71.2, 8.8" repeatDur="indefinite" restart="always" to="0, 71.2, 8.8" type="rotate">
+				</animateTransform>
+		</g>
+	</g>
+		<g id="Conv_Auto" display="none">
+		<polyline class="st9" points="0,0.5 79.5,0.5 79.5,17.5 0,17.5 		" />
+		<ellipse class="st9" cx="71.1" cy="8.8" rx="8.4" ry="8.3" />
+		<g class="st4">
+			<line class="st5" x1="71.1" y1="0.6" x2="71.1" y2="8.8" />
+			
+				<animateTransform accumulate="none" additive="replace" attributeName="transform" calcMode="linear" dur="2s" fill="remove" from="360, 71.2, 8.8" repeatDur="indefinite" restart="always" to="0, 71.2, 8.8" type="rotate">
+				</animateTransform>
+		</g>
+	</g>
+</g>
+</svg>
