@@ -1,5 +1,0 @@
-export var TaskList = {
-'name':'generatedTask',
-'type':'st',
-'interval': 1000,
- 'functionBlocks':{"Main_Program":{},"PlaySound":{"_STType":{"type":"STRING","access":1,"value":"\u0022\u0022"},"ItemId":{"type":"ANY","access":1,"value":"0"},"EnO":{"type":"BOOL","access":2,"value":"true"},"Play":{"type":"BOOL","access":1,"value":"false"},"Rep":{"type":"BOOL","access":1,"value":"false"},"Sound":{"type":"STRING","access":1,"value":"\u0022\u0022"},"Stop":{"type":"BOOL","access":1,"value":"false"}},"Zvukovoj_Signal_ID_2805251":{"Filjtr_Trevog":{"type":"BOOL","access":1,"value":"false"},"EnO":{"type":"BOOL","access":2,"value":"true"},"PlaySound_1":{"type":"PlaySound","access":4,"value":" new StandardFB.PlaySound({ItemId:2805256})"},"Start":{"type":"BOOL","access":4,"value":"false"},"Finish":{"type":"BOOL","access":4,"value":"false"}}}};

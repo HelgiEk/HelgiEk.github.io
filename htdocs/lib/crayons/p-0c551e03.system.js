@@ -1,1 +1,0 @@
-System.register([],(function(e){"use strict";return{execute:function(){var r={lastWeek:"eeee 'dernier à' p",yesterday:"'hier à' p",today:"'aujourd’hui à' p",tomorrow:"'demain à' p'",nextWeek:"eeee 'prochain à' p",other:"P"};e("f",(function(e,t,n,i){return r[e]}))}}}));
