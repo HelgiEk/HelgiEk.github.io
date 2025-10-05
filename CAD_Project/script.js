@@ -4,28 +4,43 @@ const cursorDot = document.querySelector(".cursor_dot")
 const cursorAura = document.querySelector(".cursor_aura")
 const links = document.querySelectorAll(".active_button")
 
+const videos = document.querySelectorAll(".video")
+const videoContents = document.querySelectorAll(".content")
+const videoButtons = document.querySelectorAll(".video_button")
+const progressRings = document.querySelectorAll(".progress_ring")
+const progressRingCircles = document.querySelectorAll(".progress_ring_circle")
+
+// const block_projects = document.querySelector(".block_projects")
+
+// block_projects.style.height = 100 75 + "px"
+
+let percentVideo
+let radius
+let circumference
+let offset
+
 window.addEventListener("mousemove", (e) => {
 
-    const posX = e.pageX;
-    const posY = e.pageY;
+    const posX = e.pageX
+    const posY = e.pageY
 
-    cursorDot.style.left = posX + "px";
-    cursorDot.style.top = posY + "px";
+    cursorDot.style.left = posX + "px"
+    cursorDot.style.top = posY + "px"
 
-    cursorDot.classList.remove('hidden');
-    cursorAura.classList.remove('hidden');
+    cursorDot.classList.remove('hidden')
+    cursorAura.classList.remove('hidden')
 
     cursorAura.animate({
         left: posX + "px",
         top: posY + "px"
-    }, { duration: 500, fill: "forwards" });
+    }, { duration: 500, fill: "forwards" })
 
-});
+})
 
 window.addEventListener("mouseout", () => {
     cursorDot.classList.add('hidden');
     cursorAura.classList.add('hidden');
-});
+})
 
 for (let i = 0; i < links.length; i++) {
 
@@ -44,33 +59,35 @@ for (let i = 0; i < links.length; i++) {
 /* --------------------------------------------------- */
 /* ---------------------- VIDEO ---------------------- */
 
-const videos = document.querySelectorAll(".video")
-const videoContents = document.querySelectorAll(".content");
-const videoButtons = document.querySelectorAll(".video_button");
-const progressRings = document.querySelectorAll(".progress_ring")
-const progressRingCircles = document.querySelectorAll(".progress_ring_circle")
-// const progressRing = document.querySelector(".progress_ring_circle")
-let percentVideo
-let radius
-let circumference
-let offset
+// videos[0].addEventListener('loadedmetadata', () => {
+//     videos[0].currentTime = 0;
+//     videos[0].play()
+// });
 
-videos[0].addEventListener('loadedmetadata', function () {
-    videos[0].currentTime = 0;
-    videos[0].play()
-});
 
 for (let i = 0; i < videos.length; i++) {
 
-    videos[i].addEventListener('ended', function () { Switching(i, videos.length) })
-    
-    videos[i].addEventListener('play', event => {
-        percentVideo = 100 / videos[i].duration
-        setCircumference(i)})
+    videos[i].addEventListener('ended', () => { Switching(i, videos.length) })
 
-    videos[i].addEventListener('timeupdate', event => {
+    videos[i].addEventListener('play', () => {
+        percentVideo = 100 / videos[i].duration
+        setCircumference(i)
+    })
+
+    videos[i].addEventListener('timeupdate', () => {
         const timeVideo = videos[i].currentTime * percentVideo
-        setProgress(i, timeVideo);})
+        setProgress(i, timeVideo);
+    })
+
+    videoButtons[i].addEventListener("click", () => {
+        for (let j = 0; j < videos.length; j++) {
+            if (videos[j].classList.contains("video_current")) {
+                if (i != j) {
+                    SwitchingOnClick(j, i)
+                }
+            }
+        }
+    })
 }
 
 function Switching(cur, endV) {
@@ -82,6 +99,10 @@ function Switching(cur, endV) {
         next = cur + 1
     }
 
+    SwitchingOnClick(cur, next)
+}
+
+function SwitchingOnClick(cur, next) {
     videoSwitching(cur, next)
     contentSwitching(cur, next)
     buttonSwitching(cur, next)
@@ -89,8 +110,8 @@ function Switching(cur, endV) {
 }
 
 function videoSwitching(cur, next) {
-    videos[cur].currentTime = 0;
-    videos[next].currentTime = 0;
+    videos[cur].currentTime = 0
+    videos[next].currentTime = 0
 
     videos[cur].classList.remove('video_current')
     videos[next].classList.add('video_current')
@@ -114,7 +135,7 @@ function buttonSwitching(cur, next) {
     videoButtons[next].classList.add('active_now')
 }
 
-function ringBarSwitching(cur, next){
+function ringBarSwitching(cur, next) {
     progressRings[cur].classList.remove('active_ring')
     progressRings[next].classList.add('active_ring')
     progressRingCircles[cur].style.strokeDashoffset = circumference
@@ -123,15 +144,15 @@ function ringBarSwitching(cur, next){
 
 /* ------- PROGRESS_RING ------- */
 
-function setCircumference(cur){
+function setCircumference(cur) {
     radius = progressRingCircles[cur].r.baseVal.value
     circumference = 2 * Math.PI * radius
-    
+
     progressRingCircles[cur].style.strokeDasharray = ` ${circumference} ${circumference}`
     progressRingCircles[cur].style.strokeDashoffset = circumference
 }
 
-function setProgress(cur, percent){
+function setProgress(cur, percent) {
     offset = circumference - percent / 100 * circumference
     progressRingCircles[cur].style.strokeDashoffset = offset
 }

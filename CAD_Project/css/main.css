@@ -117,6 +117,7 @@ img {
 
 .header {
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.64);
@@ -288,7 +289,7 @@ header .nav_buttons .btn .order_project:hover {
 
 .video_bg {
     position: relative;
-    z-index: -100;
+    /* z-index: -10; */
 
     height: 100vh;
     width: 100%;
@@ -344,6 +345,7 @@ header .nav_buttons .btn .order_project:hover {
 /* ------------------ VIDEO BUTTON ------------------- */
 
 .video_bg .video_buttons {
+    /* position: relative; */
     width: 340px;
     height: 27px;
 
@@ -352,9 +354,17 @@ header .nav_buttons .btn .order_project:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    /* z-index: 110; */
 }
 
 .video_bg .video_buttons .video_button {
+    /* position: relative; */
+    /* z-index: 111; */
+
+    border: 0;
+    padding: 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -377,6 +387,8 @@ header .nav_buttons .btn .order_project:hover {
 }
 
 .video_button .progress_ring{
+    z-index: 9;
+
     position: absolute;
 
     width: 36px;
@@ -434,4 +446,28 @@ header .nav_buttons .btn .order_project:hover {
     font-weight: 300;
     /* font-size: 40px; */
     color: #fff;
+}
+
+.block_projects{
+    height: calc(100vh - 75px);
+    width: 100%;
+
+    background-color: aqua;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+
+    /* height: 100vh;
+    width: 100%; */
+}
+
+.projects .project {
+    margin-inline: 6px;
+    margin-block: 6px;
+
+    /* min-width: 300px; */
+    max-width: calc((100% / 4) - 12px);
+    aspect-ratio: 1 / 1;
 }
