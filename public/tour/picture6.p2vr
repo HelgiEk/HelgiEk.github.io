@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Pano2VR project file  -->
+<pano2vrconfig version="7.1.8" rev="20986">
+  <panorama>
+    <id>node1</id>
+    <input>
+      <patch/>
+      <type>auto</type>
+      <filename>../picture6.jpg</filename>
+      <videotype>equi</videotype>
+      <levelpitch>0</levelpitch>
+      <levelroll>0</levelroll>
+    </input>
+    <viewingparameter>
+      <pan/>
+      <tilt/>
+      <fov/>
+      <flyinstart/>
+      <pannorth>0</pannorth>
+    </viewingparameter>
+    <userdata>
+      <customprops/>
+      <capturedatetime>2020-07-14T00:20:37</capturedatetime>
+      <latitude>55.749571</latitude>
+      <longitude>37.535359</longitude>
+      <altitude>-10000</altitude>
+      <author>Yury Golubinsky</author>
+      <copyright>© Yury Golubinsky</copyright>
+      <datetime>14.07.2020 0:20</datetime>
+      <tags>360x180|VarvaraGolubinskaya|panorama|PANO2VR</tags>
+    </userdata>
+    <projectsettings>
+      <userdata>
+        <customprops/>
+      </userdata>
+      <mapgrid>
+        <anchor/>
+      </mapgrid>
+      <floorplangrid>
+        <anchor/>
+      </floorplangrid>
+      <translationsavailable>
+        <value id="Проект">ru-RU</value>
+      </translationsavailable>
+      <translationsnames>
+        <value id="Проект">русский</value>
+      </translationsnames>
+      <translationsenabled>
+        <value id="Проект">true</value>
+      </translationsenabled>
+    </projectsettings>
+    <floorplans/>
+    <hotspots/>
+    <output>
+      <htmlcss>
+        <html>
+          <enabled>1</enabled>
+          <filename>index.html</filename>
+          <template>normal.ggt</template>
+          <values>
+            <value id="cachebust">true</value>
+            <value id="css"></value>
+            <value id="fitcover">false</value>
+            <value id="htmltitle">$(upt)</value>
+            <value id="jsxml">false</value>
+            <value id="parseanchor">true</value>
+          </values>
+        </html>
+        <facequality/>
+        <transition>
+          <zoomfov>40</zoomfov>
+          <zoomafterinfov>140</zoomafterinfov>
+          <zoomafteroutfov>40</zoomafteroutfov>
+        </transition>
+        <autorotate/>
+        <soundstransition/>
+        <flyintransition/>
+        <hotspottext/>
+        <hotspotstyle/>
+        <webvr/>
+        <tilesize>1520</tilesize>
+        <filename>pano.xml</filename>
+        <windowwidth>1920</windowwidth>
+        <windowheight>1080</windowheight>
+      </htmlcss>
+    </output>
+    <streetview/>
+    <streetviewproject/>
+    <ggloudproject/>
+    <sounds/>
+    <animation>
+      <title>Animation01</title>
+    </animation>
+  </panorama>
+</pano2vrconfig>

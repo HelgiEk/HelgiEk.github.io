@@ -1,0 +1,8 @@
+# Config
+.agents/
+.osp/
+
+# Docs
+*.docx
+*.doc
+
