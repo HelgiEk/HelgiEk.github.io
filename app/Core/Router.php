@@ -30,4 +30,3 @@ final class Router
         $controller->{$action}();
     }
 }
-

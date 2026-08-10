@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="tour-page-root">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 		<title></title>
@@ -10,29 +10,7 @@
 		<meta property="og:description" content="">
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta property="og:image" content="preview.jpg">
-		<style type="text/css" title="Default">
-			/* fullscreen */
-			html {
-				height:100%;
-			}
-			body {
-				height:100%;
-				margin: 0px;
-				background: black;
-				color: white;
-				overflow:hidden; /* disable scrollbars */
-				-webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* remove highlight on tab for iOS/Android */
-			}
-			/* fix for scroll bars on webkit & >=Mac OS X Lion */
-			::-webkit-scrollbar {
-				background-color: rgba(0,0,0,0.5);
-				width: 0.75em;
-				height: 0.75em;
-			}
-			::-webkit-scrollbar-thumb {
-				background-color:  rgba(255,255,255,0.5);
-			}
-		</style>
+		<link rel="stylesheet" href="/assets/css/main.css">
 	<script>
 /* script for auto update */
 var ggWebSocket;
@@ -97,11 +75,11 @@ window.addEventListener("load", (event) => {
 
 </script>
 	</head>
-	<body>
+	<body class="tour-page">
 <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
 		<script type="text/javascript" src="pano2vr_player.js?ts=93937984">
 		</script>
-		<div id="container" style="width:100%;height:100%;overflow:hidden;">
+		<div id="container" class="tour-container">
 		<br>Loading...<br><br>
 		</div>
 		<script type="text/javascript">
