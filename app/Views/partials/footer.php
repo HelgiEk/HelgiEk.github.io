@@ -21,6 +21,6 @@
         </button>
     </div>
 
-    <script src="/assets/js/main.js?v=20260806-6" defer></script>
+    <script src="/assets/js/main.js?v=20260810-2" defer></script>
 </body>
 </html>

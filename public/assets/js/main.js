@@ -11,6 +11,7 @@ const videoButtons = document.querySelectorAll(".video_button")
 const progressRings = document.querySelectorAll(".progress_ring")
 const progressRingCircles = document.querySelectorAll(".progress_ring_circle")
 const tourOverlay = document.querySelector(".tour_overlay")
+const tourFrame = document.querySelector(".tour_frame iframe[data-src]")
 const heroSection = document.querySelector(".video_bg")
 const heroScrollButton = document.querySelector(".hero_scroll_down")
 const pageFooter = document.querySelector(".footer")
@@ -35,7 +36,7 @@ const AUTO_SLIDE_DURATION = 7000
 const FLOATING_BUTTON_BOTTOM_OFFSET = 28
 const FLOATING_BUTTON_MOBILE_BOTTOM_OFFSET = 18
 const PRELOADER_MIN_VISIBLE = 650
-const PRELOADER_MAX_WAIT = 4500
+const PRELOADER_MAX_WAIT = 8000
 const preloaderStartedAt = performance.now()
 let activeProjectGallery = []
 let activeProjectImageIndex = 0
@@ -47,6 +48,7 @@ let activeProjectImageIndex = 0
 updateFloatingButtonsOffset()
 updateExpertiseDescriptionHeights()
 prepareSitePreloader()
+prepareTourFrame()
 window.addEventListener("scroll", updateFloatingButtonsOffset, { passive: true })
 window.addEventListener("resize", updateFloatingButtonsOffset)
 window.addEventListener("resize", updateExpertiseDescriptionHeights)
@@ -235,20 +237,70 @@ function prepareSitePreloader() {
     }
 
     const firstVideo = videos[0]
-    const firstVideoReady = firstVideo ? waitUntilVideoCanPlay(firstVideo) : Promise.resolve()
-    const pageLoaded = new Promise((resolve) => {
-        if (document.readyState === "complete") {
-            resolve()
-            return
-        }
-
-        window.addEventListener("load", resolve, { once: true })
-    })
+    const firstHeroVisualReady = firstVideo
+        ? Promise.race([
+            waitUntilImageReady(firstVideo.poster),
+            waitUntilVideoCanPlay(firstVideo),
+        ])
+        : Promise.resolve()
     const maxWait = new Promise((resolve) => {
         window.setTimeout(resolve, PRELOADER_MAX_WAIT)
     })
 
-    Promise.race([firstVideoReady, pageLoaded, maxWait]).then(hideSitePreloader)
+    Promise.race([firstHeroVisualReady, maxWait]).then(hideSitePreloader)
+}
+
+function waitUntilImageReady(source) {
+    if (!source) {
+        return Promise.resolve()
+    }
+
+    const image = new Image()
+    image.decoding = "async"
+    image.src = source
+
+    const loaded = image.complete
+        ? Promise.resolve()
+        : new Promise((resolve) => {
+            image.addEventListener("load", resolve, { once: true })
+            image.addEventListener("error", resolve, { once: true })
+        })
+
+    return loaded.then(() => {
+        if (typeof image.decode === "function") {
+            return image.decode().catch(() => {})
+        }
+
+        return undefined
+    })
+}
+
+function prepareTourFrame() {
+    if (!tourFrame) {
+        return
+    }
+
+    const loadTour = () => {
+        if (!tourFrame.hasAttribute("src")) {
+            tourFrame.src = tourFrame.dataset.src
+        }
+    }
+
+    if (!("IntersectionObserver" in window)) {
+        loadTour()
+        return
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) {
+            return
+        }
+
+        loadTour()
+        observer.disconnect()
+    }, { rootMargin: "600px 0px" })
+
+    observer.observe(tourFrame)
 }
 
 function hideSitePreloader() {

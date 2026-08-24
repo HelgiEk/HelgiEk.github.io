@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
-
 /* Normalize
    ========================================================================== */
 
@@ -1805,7 +1803,7 @@ header .nav_buttons .btn .order_project:hover,
     overflow: hidden;
     overflow-anchor: none;
     contain: layout paint;
-    background: #111 url('/assets/images/container4group.png') center / cover no-repeat;
+    background: #111 url('/assets/images/container4group.webp') center / cover no-repeat;
     color: #fff;
 }
 

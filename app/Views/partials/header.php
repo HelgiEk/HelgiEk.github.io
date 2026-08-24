@@ -10,7 +10,11 @@ $title = $title ?? 'CAD Project';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?></title>
-    <link rel="stylesheet" href="/assets/css/main.css?v=20260806-16">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="/assets/videos/poster_1.webp" as="image" type="image/webp" fetchpriority="high">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css?v=20260810-1">
 </head>
 <body class="site_loading">
     <div class="site_preloader" role="status" aria-live="polite" aria-label="Загрузка сайта">

@@ -10,7 +10,7 @@ $projects = $projects ?? [];
 <section class="video_bg">
     <div class="videos">
         <?php foreach ($slides as $index => $slide): ?>
-            <video class="video <?= $index === 0 ? 'video_current' : 'video_next' ?>" muted playsinline preload="<?= $index === 0 ? 'auto' : 'none' ?>" poster="<?= htmlspecialchars($slide['poster'], ENT_QUOTES, 'UTF-8') ?>">
+            <video class="video <?= $index === 0 ? 'video_current' : 'video_next' ?>" muted playsinline preload="<?= $index === 0 ? 'metadata' : 'none' ?>" poster="<?= htmlspecialchars($slide['poster'], ENT_QUOTES, 'UTF-8') ?>">
                 <source src="<?= htmlspecialchars($slide['video'], ENT_QUOTES, 'UTF-8') ?>" type="video/mp4">
             </video>
         <?php endforeach; ?>
@@ -51,9 +51,11 @@ $projects = $projects ?? [];
 <section id="engineering" class="engineering_showcase" aria-labelledby="engineeringTitle">
     <img
         class="engineering_showcase_image"
-        src="/assets/images/upscaled-image_4_1.png"
+        src="/assets/images/upscaled-image_4_1.webp"
         alt="Современный загородный дом, спроектированный CAD Project"
         loading="lazy"
+        decoding="async"
+        fetchpriority="low"
     >
 
     <div class="container engineering_showcase_content">
@@ -98,7 +100,7 @@ $projects = $projects ?? [];
                 data-project-description="<?= htmlspecialchars($project['description'], ENT_QUOTES, 'UTF-8') ?>"
                 data-project-gallery="<?= $projectGalleryJson ?>"
             >
-                <img src="<?= htmlspecialchars($project['image'], ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($project['title'], ENT_QUOTES, 'UTF-8') ?>" loading="lazy" decoding="async">
+                <img src="<?= htmlspecialchars($project['image'], ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($project['title'], ENT_QUOTES, 'UTF-8') ?>" loading="lazy" decoding="async" fetchpriority="low">
                 <video class="project_preview_video" muted playsinline loop preload="none" aria-hidden="true">
                     <source src="<?= htmlspecialchars($project['preview_video'], ENT_QUOTES, 'UTF-8') ?>" type="video/mp4">
                 </video>
@@ -272,7 +274,7 @@ $projects = $projects ?? [];
 
 <section class="container block_3d_tours">
     <div class="tour_frame">
-        <iframe src="/tour/index.html" title="3D-тур CAD Project" loading="lazy"></iframe>
+        <iframe data-src="/tour/index.html" title="3D-тур CAD Project" loading="lazy"></iframe>
         <button class="tour_overlay active_button" type="button">Нажмите, чтобы управлять 3D-туром</button>
     </div>
 </section>
